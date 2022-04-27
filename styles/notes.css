@@ -1,0 +1,36 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 0 2em;
+}
+
+.note {
+    width: 85%;
+    border-radius: 0.5em;
+    margin-top: 2em;
+    padding: 1em 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #cdcdcd;
+}
+
+.note_empty {
+    color: #cdcdcd;
+    margin-top: 2em;
+}
+
+.note__header {
+    border-bottom: 1px solid #444;
+    margin: 0;
+    padding-bottom: 0.5em;
+    width: 90%;
+    word-break: break-all;
+}
+
+.note__body {
+    text-align: left;
+    width: 90%;
+    margin-top: 0.5em;
+}

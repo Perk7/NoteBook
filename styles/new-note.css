@@ -1,0 +1,82 @@
+.new-note {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #0005;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-note__form {
+    background-color: #fff;
+    width: 80%;
+    padding: 1em;
+    border-radius: 3%;
+}
+
+.new-note__form__header {
+    border: 0;
+    border-bottom: 1px solid #444;
+    background-color: #0000;
+    width: 100%;
+    font-size: 1.4em;
+    padding-bottom: 0.5em;
+    word-break: break-all;
+}
+
+.new-note__form__text {
+    width: 100%;
+    min-height: 2.6em;
+    max-height: 40vh;
+    margin: 1em 0;
+    border: 0;
+    font-size: 1.1em;
+
+    text-overflow: clip;
+    scrollbar-color: #d4aa70 #e4e4e4;
+    scrollbar-width: thin;
+    overflow-y: scroll;
+}
+
+.new-note__form__text::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.new-note__form__text::-webkit-scrollbar-thumb {
+    background-color: #0005;
+}  
+
+.new-note__new-color-select {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.new-note__new-color {
+    width: 2em;
+    height: 2em;
+    border: 1px solid #000;
+    border-radius: 15%;
+}
+
+.new-color_active {
+    background-image: url('../images/check.svg');
+    background-size: 100% 100%;
+}
+
+.new-note__control {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.new-note__control-btn {
+    width: 40%;
+    padding: 0.8em 0;
+    border: 0;
+    font-weight: 600;
+    background-color: #0002;
+}

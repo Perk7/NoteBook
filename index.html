@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="./style.css">
+    
+    <title>NoteBook</title>
+</head>
+<body>
+    <header>
+        <h1 class="header__heading header__logo"><a href="/">NoteBook</a></h1>
+        <h1 class="header__heading header__count-delete" hidden></h1>
+        <div class="header__btn-block">
+            <button data-action="add" id="add-btn" class="btn-block__btn btn-block__add-btn"></button>
+            <button data-action="delete" id="delete-btn" class="btn-block__btn btn-block__delete-btn"></button>
+        </div>
+    </header>
+    <main>
+
+    </main>
+    <aside class="new-note" hidden>
+        <div class="new-note__form" data-color="#FFF">
+            <form>
+                <div data-text="Заголовок" class="new-note__form__header" name="new-header" contenteditable="true"></div>
+                <div data-text="Текст..." class="new-note__form__text" name="new-text" contenteditable="true"></div>
+                <div class="new-note__new-color-select">
+                    <button data-color="#fff" class="new-note__new-color new-color_active"></button>
+                    <button data-color="#f28b82" class="new-note__new-color"></button>
+                    <button data-color="#fbbc04" class="new-note__new-color"></button>
+                    <button data-color="#fff475" class="new-note__new-color"></button>
+                    <button data-color="#ccff90" class="new-note__new-color"></button>
+                    <button data-color="#cbf0f8" class="new-note__new-color"></button>
+                    <button data-color="#e8eaed" class="new-note__new-color"></button>
+                </div>
+                <div class="new-note__control">
+                    <button class="new-note__control-btn new-note__save-btn">Сохранить</button>
+                    <button class="new-note__control-btn new-note__close-btn">Отмена</button>
+                </div>
+            </form>
+        </div>
+    </aside>
+    <script type="module" src="./handlers.js"></script>
+</body>
+</html>
