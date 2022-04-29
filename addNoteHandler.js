@@ -65,6 +65,9 @@ class AddNoteHandler extends AbstractHandler {
         else if (event.target.classList.contains('new-note__save-btn')) {
             this.saveNewNote(event)
         }
+        else if (event.target.getAttribute('contenteditable')) {
+            event.target.focus()
+        } 
     }
 }
 

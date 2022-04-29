@@ -1,5 +1,5 @@
 header {
-    background-color: #F3D94D;
+    background-color: #eed33a;
     height: 60px;
     width: 100%;
     display: flex;
@@ -48,6 +48,10 @@ header {
 
 }
 
+.btn-block__btn > div {
+    display: none;
+}
+
 .btn-block__btn #delete__cover {
     transition: .5s;
 }
@@ -66,4 +70,30 @@ header {
 
 .btn-block__add-btn {
     transition: .5s;
+}
+
+@media screen and (min-width: 720px) and (max-width: 1920px) {
+    .btn-block__btn {
+        width: 10em;
+
+        flex-direction: row;
+        align-items: center;
+        display: flex;
+    }
+
+    .btn-block__btn > div {
+        display: block;
+        color: #FFF;
+        font-weight: 600;
+        font-size: 1.4em;
+    }
+
+    .btn-block__btn svg {
+        height: 3em;
+    }
+
+    .btn-block__delete-btn svg {
+        height: 2.5em;
+        margin-left: -1em;
+    }
 }

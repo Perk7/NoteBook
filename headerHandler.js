@@ -27,7 +27,8 @@ class HeaderHandler extends AbstractHandler {
 
         let addBtn = document.getElementById('add-btn')
         addBtn.dataset.action = 'add'
-        addBtn.style.transform = ''
+        addBtn.children[0].innerHTML = 'Добавить'
+        addBtn.children[1].style.transform = ''
 
         document.getElementById('delete-btn')
             .dataset.action = 'delete'    
@@ -84,7 +85,8 @@ class HeaderHandler extends AbstractHandler {
                 
                 let refuseBtn = document.getElementById('add-btn')
                 refuseBtn.dataset.action = 'refuse'
-                refuseBtn.style.transform = 'rotate(45deg)'
+                refuseBtn.children[0].innerHTML = 'Отменить'
+                refuseBtn.children[1].style.transform = 'rotate(45deg)'
 
                 document.getElementById('delete-btn')
                     .dataset.action = 'confirm-delete'

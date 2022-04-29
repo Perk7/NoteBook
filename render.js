@@ -38,12 +38,13 @@ function displayNotes() {
 export function disableDeleteBtn(status) {
     let deleteBtn = document.getElementById('delete-btn')
     deleteBtn.disabled = status
-    deleteBtn.children[0].style.fill = status ? '#ededed' : '#FFF'
+    deleteBtn.children[1].style.fill = status ? '#ededed' : '#FFF'
+    deleteBtn.children[0].style.color = status ? '#ededed' : '#FFF'
     deleteBtn.querySelector('[data-svgType="lid"]').id = status ? '' : 'delete__cover';
 }
 
 function render() {
-    if (!document.querySelector('.btn-block__add-btn').innerHTML) {
+    if (!(document.querySelector('.btn-block__add-btn').children.length !== 1)) {
         addImages()
     }
 

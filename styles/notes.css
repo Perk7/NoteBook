@@ -6,7 +6,7 @@ main {
 }
 
 .note {
-    width: 85%;
+    width: min(85%, 400px);
     border-radius: 0.5em;
     margin-top: 2em;
     padding: 1em 0;
@@ -33,4 +33,19 @@ main {
     text-align: left;
     width: 90%;
     margin-top: 0.5em;
+}
+
+@media screen and (min-width: 720px) and (max-width: 1920px) {
+    main {
+        display: flex;
+        justify-content: center;
+        padding: 60px 3em 2em;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    
+    .note {
+        width: min(40%, 350px);
+        margin-left: 1em;
+    }
 }

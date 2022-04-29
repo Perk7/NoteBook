@@ -14,7 +14,7 @@
     background-color: #fff;
     width: 80%;
     padding: 1em;
-    border-radius: 3%;
+    border-radius: 1em;
 }
 
 .new-note__form__header {
@@ -79,4 +79,25 @@
     border: 0;
     font-weight: 600;
     background-color: #0002;
+}
+
+@media screen and (min-width: 550px) and (max-width: 720px) {
+    .new-note__form {
+        width: 65%;
+    }
+}
+
+@media screen and (min-width: 720px) and (max-width: 1400px) {
+    .new-note__form {
+        width: 50%;
+    }
+
+    .new-note__new-color-select {
+        width: min(100%, 400px);
+    }
+
+    .new-note__control-btn {
+        width: min(40%, 250px);
+        padding: 1.1em 0;
+    }
 }
