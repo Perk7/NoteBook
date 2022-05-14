@@ -1,4 +1,5 @@
 import AbstractHandler from './abstractHandler.js'
+import { makeFadeOut } from './render.js';
 
 class AddNoteHandler extends AbstractHandler {
     constructor(elem, eventType) {
@@ -26,8 +27,6 @@ class AddNoteHandler extends AbstractHandler {
 
         form.style.backgroundColor = '#fff';
         form.dataset.color = '#fff';
-
-        document.querySelector('.new-note').hidden = true;
 
         document.querySelector('.new-note__form__header').innerHTML = '';
         document.querySelector('.new-note__form__text').innerHTML = '';
@@ -63,10 +62,12 @@ class AddNoteHandler extends AbstractHandler {
             this.changeBg(event)
         }
         else if (event.target.classList.contains('new-note__close-btn')) {
-            this.closeAdd(event)
+            makeFadeOut(document.querySelector('.new-note'), 1000)
+            setTimeout(this.closeAdd, 1000, event)
         }
         else if (event.target.classList.contains('new-note__save-btn')) {
             this.saveNewNote(event, event.currentTarget.dataset.type)
+            document.querySelector('.new-note').hidden = true;
         }
         else if (event.target.getAttribute('contenteditable')) {
             event.target.focus()

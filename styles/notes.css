@@ -21,11 +21,15 @@ main > ul {
     align-items: center;
     flex-direction: column;
     border: 1px solid #cdcdcd;
+    transition: background-color 0.5s;
 }
 
 .note_empty {
-    color: #cdcdcd;
+    color: #9d9b9b;
     margin-top: 2em;
+    font-size: 1.5em;
+    width: 100%;
+    text-align: center;
 }
 
 .note__header {
