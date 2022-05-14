@@ -2,6 +2,7 @@ import {addImages} from './images/header.js';
 
 function displayNotes() {
     let main = document.querySelector('main');
+
     main.innerHTML = '';
 
     let colCount
@@ -33,7 +34,7 @@ function displayNotes() {
     }
     
     let keys = Object.keys(notes).sort()
-    for (let i=1; i < keys.length; i++) {
+    for (let i=0; i < keys.length; i++) {
         let obj = notes[keys[i]]
 
         let note = document.createElement('div');
@@ -58,6 +59,9 @@ function displayNotes() {
         
         main.childNodes[i%colCount].appendChild(note)
     }
+
+    main.hidden = false;
+    return new Promise(res => res())
 }
 
 export function disableDeleteBtn(status) {
@@ -69,6 +73,8 @@ export function disableDeleteBtn(status) {
 }
 
 function render() {
+    let main = document.querySelector('main');
+
     if (!(document.querySelector('.btn-block__add-btn').children.length !== 1)) {
         addImages()
     }
@@ -85,8 +91,40 @@ function render() {
     for (let i of document.querySelectorAll('.new-note__new-color')) {
         i.style.backgroundColor = i.dataset.color;
     }
+    
+    makeFadeOut(main, 300).then(() => displayNotes().then(() => makeFadeIn(main, 200)))
+}
 
-    displayNotes()
+export function makeFadeOut(elem, time) {
+    elem.classList.add('fade-out')
+    elem.style.animation = `fade-out ${time/1000}s`;
+    return new Promise((res, rej) => {
+        setTimeout(() => {
+            elem.hidden = true;
+            elem.classList.remove('fade-out')
+            elem.style.animation = '';
+            res()
+        }, time)
+    })
+}
+
+function delay(ms) {
+    return new Promise((resolve, reject) => {
+      setTimeout(resolve, ms);
+    });
+  }
+
+export function makeFadeIn(elem, time) {
+    elem.classList.add('fade-in')
+    elem.style.animation = `fade-in ${time/1000}s`;
+    return new Promise((res, rej) => {
+        setTimeout(() => {
+            elem.hidden = false;
+            elem.classList.remove('fade-in')
+            elem.style.animation = '';
+            res()
+        }, time)
+    })
 }
 
 export default render

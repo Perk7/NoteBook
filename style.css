@@ -5,6 +5,28 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+html {
+    overflow-y: scroll;    
+}
+
 body {
     margin: 0;
     font-family: Roboto;
@@ -38,4 +60,13 @@ svg {
 
 input:focus, div:focus {
     outline: 0;
+}
+
+.fade-out {
+    opacity: 0;
+    
+}
+
+.fade-in {
+    opacity: 1;
 }

@@ -35,7 +35,7 @@ export default class Handler {
         shadow.appendChild(popupText)
 
         document.body.appendChild(shadow)
-        setTimeout(() => document.body.removeChild(shadow), 3000)
+        setTimeout(() => document.body.removeChild(shadow), 2000)
     }
 
 }
