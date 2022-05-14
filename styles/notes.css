@@ -1,8 +1,15 @@
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding: 60px 0 2em;
+
+    display: flex;
+    flex-direction: row;
+}
+
+main > ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 0;
 }
 
 .note {
@@ -29,23 +36,53 @@ main {
     word-break: break-all;
 }
 
+.note__header_empty {
+    border-bottom: 0;
+}
+
 .note__body {
     text-align: left;
     width: 90%;
     margin-top: 0.5em;
 }
 
-@media screen and (min-width: 720px) and (max-width: 1920px) {
+@media screen and (min-width: 800px) {
     main {
-        display: flex;
-        justify-content: center;
         padding: 60px 3em 2em;
-        flex-wrap: wrap;
-        flex-direction: row;
+    }
+
+    main > ul {
+        width: 50%;
     }
     
     .note {
-        width: min(40%, 350px);
-        margin-left: 1em;
+        width: min(90%, 400px);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    main > ul {
+        width: 33%;
+    }
+}
+
+@media screen and (min-width: 1700px) {
+    main > ul {
+        width: 25%;
+    }
+}
+
+@media screen and (min-width: 1900px) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
+
+    main {
+        width: 1400px;
+    }
+
+    main > ul {
+        width: 33%;
     }
 }

@@ -1,0 +1,23 @@
+@keyframes flash {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.popup__shadow {
+    background-color: #0007;
+    animation: flash 2s;
+    opacity: 0;
+}
+
+.popup__text {
+    color: #fff;
+    font-size: 4em;
+    font-family: monospace;
+}

@@ -1,7 +1,7 @@
 .new-note {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
+    width: 100%;
+    height: 100%;
+    position: fixed;
     top: 0;
     left: 0;
     background-color: #0005;
@@ -98,6 +98,36 @@
 
     .new-note__control-btn {
         width: min(40%, 250px);
+        padding: 1.1em 0;
+    }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1900px) {
+    .new-note__form {
+        width: 35%;
+    }
+
+    .new-note__new-color-select {
+        width: min(100%, 400px);
+    }
+
+    .new-note__control-btn {
+        width: min(40%, 250px);
+        padding: 1.1em 0;
+    }
+}
+
+@media screen and (min-width: 1900px) {
+    .new-note__form {
+        width: 600px;
+    }
+
+    .new-note__new-color-select {
+        width: 400px;
+    }
+
+    .new-note__control-btn {
+        width: 250px;
         padding: 1.1em 0;
     }
 }

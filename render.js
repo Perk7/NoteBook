@@ -3,26 +3,51 @@ import {addImages} from './images/header.js';
 function displayNotes() {
     let main = document.querySelector('main');
     main.innerHTML = '';
+
+    let colCount
+    if (window.innerWidth < 800) {
+        colCount = 1
+    } else if (window.innerWidth < 1200) {
+        colCount = 2
+    } else if (window.innerWidth < 1700) {
+        colCount = 3
+    } else if (window.innerWidth < 1900) {
+        colCount = 4
+    } else {
+        colCount = 3
+    }
+
+    for (let i=0; i<colCount; i++) {
+        let column = document.createElement('ul')
+        main.appendChild(column)
+    }
+
     let notes = JSON.parse(localStorage.getItem('notes'));
 
     if (Object.keys(notes).length === 0) {
         let empty = document.createElement('h3')
         empty.className = 'note_empty'
         empty.innerText = 'Пусто'
+        main.innerHTML = '';
         main.appendChild(empty)
     }
     
-    for (let i of Object.keys(notes).sort()) {
-        let obj = notes[i]
+    let keys = Object.keys(notes).sort()
+    for (let i=1; i < keys.length; i++) {
+        let obj = notes[keys[i]]
 
         let note = document.createElement('div');
         note.className = 'note';
         note.dataset.color = obj.color;
-        note.dataset.key = i;
+        note.dataset.key = keys[i];
         note.style.backgroundColor = obj.color;
 
         let header = document.createElement('h3')
-        header.className = 'note__header';
+        header.classList.add('note__header');
+        if (obj.heading == obj.text && obj.heading == '') {
+            header.classList.add('note__header_empty')
+        }
+
         header.appendChild(document.createTextNode(obj.heading))
         note.appendChild(header)
 
@@ -30,16 +55,16 @@ function displayNotes() {
         body.className = 'note__body';
         body.appendChild(document.createTextNode(obj.text))
         note.appendChild(body)
-
-        main.appendChild(note)
+        
+        main.childNodes[i%colCount].appendChild(note)
     }
 }
 
 export function disableDeleteBtn(status) {
     let deleteBtn = document.getElementById('delete-btn')
     deleteBtn.disabled = status
-    deleteBtn.children[1].style.fill = status ? '#ededed' : '#FFF'
-    deleteBtn.children[0].style.color = status ? '#ededed' : '#FFF'
+    deleteBtn.children[1].style.fill = status ? '#ededed' : '#fff'
+    deleteBtn.children[0].style.color = status ? '#ededed' : '#fff'
     deleteBtn.querySelector('[data-svgType="lid"]').id = status ? '' : 'delete__cover';
 }
 

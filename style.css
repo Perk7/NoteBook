@@ -1,6 +1,7 @@
 @import './styles/header.css';
 @import './styles/new-note.css';
 @import './styles/notes.css';
+@import './styles/popup.css';
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 

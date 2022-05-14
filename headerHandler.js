@@ -68,7 +68,7 @@ class HeaderHandler extends AbstractHandler {
         event.preventDefault();
         switch (event.currentTarget.dataset.action) {
             case 'add':
-                document.querySelector('.new-note').hidden = false;
+                this.openAddNoteModal('new')
                 break;
             case 'refuse':
                 this.setDefaultMode()
@@ -102,6 +102,7 @@ class HeaderHandler extends AbstractHandler {
                 localStorage.setItem('notes', JSON.stringify(notes))
 
                 this.setDefaultMode()
+                this.makePopup('Удалено')
                 this.render()
                 break;
         }

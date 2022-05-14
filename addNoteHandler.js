@@ -21,9 +21,11 @@ class AddNoteHandler extends AbstractHandler {
         event.preventDefault();
 
         let form = document.querySelector('.new-note__form')
+        document.querySelector('html').style = ''
+        document.body.style = ''
 
-        form.style.backgroundColor = '#FFF';
-        form.dataset.color = '#FFF';
+        form.style.backgroundColor = '#fff';
+        form.dataset.color = '#fff';
 
         document.querySelector('.new-note').hidden = true;
 
@@ -33,7 +35,7 @@ class AddNoteHandler extends AbstractHandler {
         document.querySelector('.new-note__new-color[data-color="#fff"]').classList.add('new-color_active');
     }
 
-    saveNewNote(event) {
+    saveNewNote(event, type) {
         event.preventDefault();
         let notes = JSON.parse(localStorage.getItem('notes'))
 
@@ -43,10 +45,11 @@ class AddNoteHandler extends AbstractHandler {
             color: document.querySelector('.new-note__form').dataset.color,
         }
         
-        notes[Math.max(...Object.keys(notes), -1)+1] = note
+        notes[type == 'new' ? Math.max(...Object.keys(notes), -1)+1 : type] = note
         localStorage.setItem('notes', JSON.stringify(notes))
         
         this.closeAdd(event);
+        this.makePopup(type == 'new' ? 'Добавлено' : 'Изменено')
         this.render()
     }
 
@@ -54,7 +57,7 @@ class AddNoteHandler extends AbstractHandler {
         if (event.type !== 'click') {
             return
         }
-        
+
         event.preventDefault();
         if (event.target.parentElement.className === 'new-note__new-color-select') {
             this.changeBg(event)
@@ -63,7 +66,7 @@ class AddNoteHandler extends AbstractHandler {
             this.closeAdd(event)
         }
         else if (event.target.classList.contains('new-note__save-btn')) {
-            this.saveNewNote(event)
+            this.saveNewNote(event, event.currentTarget.dataset.type)
         }
         else if (event.target.getAttribute('contenteditable')) {
             event.target.focus()

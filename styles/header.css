@@ -1,10 +1,16 @@
 header {
     background-color: #eed33a;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.flex-header {
     height: 60px;
     width: 100%;
     display: flex;
     font-size: 1rem;
-    position: fixed;
 }
 
 .header__heading {
@@ -45,7 +51,6 @@ header {
     padding: 0;
     border: 0;
     background-color: #FFF0;
-
 }
 
 .btn-block__btn > div {
@@ -72,7 +77,15 @@ header {
     transition: .5s;
 }
 
-@media screen and (min-width: 720px) and (max-width: 1920px) {
+@media screen and (min-width: 720px) {
+    .header__btn-block {
+        justify-content: flex-end;
+    }
+    
+    .btn-block__btn:last-child {
+        margin-left: 4em;
+    }    
+
     .btn-block__btn {
         width: 10em;
 
@@ -95,5 +108,11 @@ header {
     .btn-block__delete-btn svg {
         height: 2.5em;
         margin-left: -1em;
+    }
+}
+
+@media screen and (min-width: 1900px){
+    .flex-header {
+        width: 1400px;
     }
 }

@@ -11,18 +11,20 @@
 </head>
 <body>
     <header>
-        <h1 class="header__heading header__logo"><a href="/">NoteBook</a></h1>
-        <h1 class="header__heading header__count-delete" hidden></h1>
-        <div class="header__btn-block">
-            <button data-action="add" id="add-btn" class="btn-block__btn btn-block__add-btn"><div>Добавить</div></button>
-            <button data-action="delete" id="delete-btn" class="btn-block__btn btn-block__delete-btn"><div>Удалить</div></button>
+        <div class="flex-header">
+            <h1 class="header__heading header__logo"><a href="/">NoteBook</a></h1>
+            <h1 class="header__heading header__count-delete" hidden></h1>
+            <div class="header__btn-block">
+                <button data-action="add" id="add-btn" class="btn-block__btn btn-block__add-btn"><div>Добавить</div></button>
+                <button data-action="delete" id="delete-btn" class="btn-block__btn btn-block__delete-btn"><div>Удалить</div></button>
+            </div>
         </div>
     </header>
     <main>
 
     </main>
     <aside class="new-note" hidden>
-        <div class="new-note__form" data-color="#FFF">
+        <div class="new-note__form" data-color="#fff">
             <form>
                 <div data-text="Заголовок" class="new-note__form__header" name="new-header" contenteditable="true"></div>
                 <div data-text="Текст..." class="new-note__form__text" name="new-text" contenteditable="true"></div>
