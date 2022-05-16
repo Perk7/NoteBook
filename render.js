@@ -49,12 +49,12 @@ function displayNotes() {
             header.classList.add('note__header_empty')
         }
 
-        header.appendChild(document.createTextNode(obj.heading))
+        header.innerHTML = obj.heading
         note.appendChild(header)
 
         let body = document.createElement('div')
         body.className = 'note__body';
-        body.appendChild(document.createTextNode(obj.text))
+        body.innerHTML = obj.text
         note.appendChild(body)
         
         main.childNodes[i%colCount].appendChild(note)

@@ -23,8 +23,9 @@ class EditNoteHandler extends AbstractHandler {
             return
         }
         event.preventDefault();
-        if (event.target.className == 'note' || event.target.parentElement.className == 'note') {
-            let elem = event.target.className == 'note' ? event.target : event.target.parentElement
+        
+        if (event.target.className == 'note' || event.target.closest('.note')) {
+            let elem = event.target.className == 'note' ? event.target : event.target.closest('.note')
             let note = JSON.parse(localStorage.getItem('notes'))[elem.dataset.key]
 
             this.openAddNoteModal(elem.dataset.key)

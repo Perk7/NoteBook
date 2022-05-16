@@ -37,7 +37,7 @@ class AddNoteHandler extends AbstractHandler {
     saveNewNote(event, type) {
         event.preventDefault();
         let notes = JSON.parse(localStorage.getItem('notes'))
-
+        
         let note = {
             heading: document.querySelector('.new-note__form__header').innerHTML,
             text: document.querySelector('.new-note__form__text').innerHTML,
@@ -62,8 +62,8 @@ class AddNoteHandler extends AbstractHandler {
             this.changeBg(event)
         }
         else if (event.target.classList.contains('new-note__close-btn')) {
-            makeFadeOut(document.querySelector('.new-note'), 1000)
-            setTimeout(this.closeAdd, 1000, event)
+            makeFadeOut(document.querySelector('.new-note'), 500)
+            setTimeout(this.closeAdd, 500, event)
         }
         else if (event.target.classList.contains('new-note__save-btn')) {
             this.saveNewNote(event, event.currentTarget.dataset.type)
