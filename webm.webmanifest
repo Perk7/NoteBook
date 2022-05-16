@@ -1,0 +1,15 @@
+{
+  "background_color": "#eed33a",
+  "description": "The simple app for keep your notes.",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "/note-icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "name": "NoteBook",
+  "short_name": "NoteBook",
+  "start_url": "/index.html"
+}
