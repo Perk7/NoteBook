@@ -4,7 +4,7 @@ function displayNotes() {
     let main = document.querySelector('main');
 
     main.innerHTML = '';
-
+    
     let colCount
     if (window.innerWidth < 800) {
         colCount = 1
